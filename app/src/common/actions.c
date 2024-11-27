@@ -15,7 +15,9 @@
  ********************************************************************************/
 
 #include "actions.h"
+
 #include "tx.h"
 
 address_state_t action_addrResponse;
 key_state_t key_state;
+bool keys_permission_granted = false;
