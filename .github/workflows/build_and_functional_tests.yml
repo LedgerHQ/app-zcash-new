@@ -33,6 +33,7 @@ jobs:
     uses: LedgerHQ/ledger-app-workflows/.github/workflows/reusable_build.yml@v1
     with:
       upload_app_binaries_artifact: "app_boilerplate_binaries"
+      builder: ledger-app-builder
 
   tests_standalone:
     name: Run standalone ragger tests using the reusable workflow
