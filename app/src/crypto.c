@@ -1106,7 +1106,7 @@ zxerr_t crypto_sign_and_check_transparent(
     // Temporarily get sk from Ed25519
     zxerr_t error = zxerr_unknown;
     CHECK_APP_CANARY()
-    const u_int8_t tInListLen = t_inlist_len();
+    const uint8_t tInListLen = t_inlist_len();
     for (uint8_t i = 0; i < tInListLen; i++) {
         const t_input_item_t *item = t_inlist_retrieve_item(i);
 
