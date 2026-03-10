@@ -210,7 +210,7 @@ __Z_INLINE void handleGetDiversifierList(volatile uint32_t *tx, uint32_t rx) {
 
     zemu_log_stack("handleGetDiversifierList");
 
-    extractHDPathSapling(rx, OFFSET_DATA);
+    extractHDPathSaplingDiv(rx, OFFSET_DATA);
 
     zxerr_t err =
         crypto_diversifier_with_startindex(G_io_apdu_buffer, hdPath.saplingdiv_path[2], hdPath.saplingdiv_div, &replyLen);
