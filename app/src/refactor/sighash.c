@@ -37,8 +37,8 @@ const uint8_t CTX_ZCASH_SHIELDED_OUTPUTS_HASH_PERSONALIZATION[] = "ZcashSOutputH
 const uint8_t CONSENSUS_BRANCH_ID_SAPLING[4] = {0xBB, 0x09, 0xB8, 0x76};  // sapling
 const uint8_t CONSENSUS_BRANCH_ID_ORCHARD[4] = {0xB4, 0xD0, 0xD6, 0xC2};  // orchard
 const uint8_t CONSENSUS_BRANCH_ID_NU6[4] = {0x55, 0x10, 0xE7, 0xC8};      // nu6
-const uint8_t CONSENSUS_BRANCH_ID_NU6_1[4] = {0xF0, 0x4D, 0xEC, 0x4D};      // nu6
-const uint8_t CONSENSUS_BRANCH_ID_NU6_2[4] = {0x30, 0xF3, 0x37 ,0x54};    // nu6
+const uint8_t CONSENSUS_BRANCH_ID_NU6_1[4] = {0xF0, 0x4D, 0xEC, 0x4D};      // nu6.1
+const uint8_t CONSENSUS_BRANCH_ID_NU6_2[4] = {0x30, 0xF3, 0x37, 0x54};    // nu6.2
 
 zxerr_t sapling_transparent_prevouts_hash(const uint8_t *input, uint8_t *output) {
     const uint8_t n = t_inlist_len();
