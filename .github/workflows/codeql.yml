@@ -3,12 +3,12 @@ name: "CodeQL"
 on:
   workflow_dispatch:
   push:
-  pull_request:
     branches:
       - main
       - develop
       - master # for safety reasons
       - dev  # for safety reasons
+  pull_request:
 
 jobs:
   analyse:
