@@ -232,7 +232,7 @@ impl TxVersion {
                 TxVersion::Sapling
             }
             BranchId::Nu5 => TxVersion::Zip225,
-            BranchId::Nu6 | BranchId::Nu6_1 | BranchId::Nu6_2 => TxVersion::Zip225,
+            BranchId::Nu6 | BranchId::Nu6_1 | BranchId::Nu6_2 | BranchId::Nu6_3 => TxVersion::Zip225,
             #[cfg(feature = "zfuture")]
             BranchId::ZFuture => TxVersion::ZFuture,
         }
