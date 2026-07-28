@@ -454,6 +454,7 @@ pub enum BranchId {
     Nu6,
     Nu6_1,
     Nu6_2,
+    Nu6_3,
     /// Candidates for future consensus rules; this branch will never
     /// activate on mainnet.
     #[cfg(feature = "zfuture")]
@@ -475,6 +476,7 @@ impl TryFrom<u32> for BranchId {
             0xc8e7_1055 => Ok(BranchId::Nu6),
             0x4dec_4df0 => Ok(BranchId::Nu6_1),
             0x5437_f330 => Ok(BranchId::Nu6_2),
+            0x37a5_165b => Ok(BranchId::Nu6_3),
             #[cfg(feature = "zfuture")]
             0xffff_ffff => Ok(BranchId::ZFuture),
             _ => Err("Unknown consensus branch ID"),
@@ -495,6 +497,7 @@ impl From<BranchId> for u32 {
             BranchId::Nu6 => 0xc8e7_1055,
             BranchId::Nu6_1 => 0x4dec_4df0,
             BranchId::Nu6_2 => 0x5437_f330,
+            BranchId::Nu6_3 => 0x37a5_165b,
             #[cfg(feature = "zfuture")]
             BranchId::ZFuture => 0xffff_ffff,
         }
@@ -563,7 +566,7 @@ impl BranchId {
             BranchId::Nu5 => params
                 .activation_height(NetworkUpgrade::Nu5)
                 .map(|lower| (lower, params.activation_height(NetworkUpgrade::Nu6))),
-            BranchId::Nu6 | BranchId::Nu6_1 | BranchId::Nu6_2 => {
+            BranchId::Nu6 | BranchId::Nu6_1 | BranchId::Nu6_2 | BranchId::Nu6_3 => {
                 params.activation_height(NetworkUpgrade::Nu6).map(|lower| {
                     #[cfg(feature = "zfuture")]
                     let upper = params.activation_height(NetworkUpgrade::ZFuture);
